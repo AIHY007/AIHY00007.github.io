@@ -34,6 +34,7 @@
             justify-content: center;
             list-style: none;
         }
+        /* 导航按钮核心样式 + 动画 */
         .nav-btn {
             padding: 8px 16px;
             background: transparent;
@@ -42,12 +43,15 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
-            transition: 0.3s;
+            /* 平滑动画 + 放大效果基础 */
+            transition: all 0.3s ease;
         }
+        /* 鼠标悬停/激活：变色+放大 */
         .nav-btn.active, .nav-btn:hover {
             background: white;
             color: #165DFF;
             font-weight: bold;
+            transform: scale(1.08); /* 轻微放大 */
         }
         /* 内容容器 */
         .container {
@@ -59,20 +63,19 @@
             padding: 40px;
             min-height: 600px;
         }
-        /* 内容板块 默认隐藏 */
+        /* 内容板块 平滑淡入 */
         .section {
             display: none;
-            animation: fadeIn 0.4s ease; /* 平滑淡入动画 */
+            animation: fadeIn 0.4s ease;
         }
         .section.active {
             display: block;
         }
-        /* 淡入动画 */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* 头像样式 直接上传照片使用 */
+        /* 头像（已匹配你的照片名） */
         .avatar {
             width: 140px;
             height: 140px;
@@ -83,7 +86,6 @@
             display: block;
             box-shadow: 0 4px 12px rgba(22, 93, 255, 0.2);
         }
-        /* 标题样式 */
         .title {
             font-size: 24px;
             color: #165DFF;
@@ -91,7 +93,6 @@
             border-left: 4px solid #165DFF;
             padding-left: 12px;
         }
-        /* 内容样式 */
         .content {
             font-size: 16px;
             line-height: 1.9;
@@ -104,7 +105,6 @@
         .item {
             margin-bottom: 12px;
         }
-        /* 居中文字 */
         .text-center {
             text-align: center;
         }
@@ -124,11 +124,9 @@
         </ul>
     </nav>
 
-    <!-- 内容主体 -->
     <div class="container">
-        <!-- 首页 -->
+        <!-- 首页 ✅ 照片路径已改为你的 avatar.jpg.jpg -->
         <div class="section active" id="home">
-            <!-- ✅ 替换这里的 src 为你的照片路径/链接，直接上传你的照片！ -->
             <img class="avatar" src="avatar.jpg.jpg" alt="贺屿">
             <h1 class="text-center" style="font-size: 32px; color: #165DFF; margin-bottom: 10px;">贺屿</h1>
             <p class="text-center" style="font-size: 18px; color: #666;">市场营销 | 新媒体运营 | 市场分析</p>
@@ -217,10 +215,8 @@
 
         navBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // 移除所有激活状态
                 navBtns.forEach(b => b.classList.remove('active'));
                 sections.forEach(s => s.classList.remove('active'));
-                // 添加当前激活状态
                 btn.classList.add('active');
                 const target = btn.getAttribute('data-target');
                 document.getElementById(target).classList.add('active');
