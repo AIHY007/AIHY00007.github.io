@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>张智 · 个人简历网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #1e293b;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* 头部区域 */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2b4c7c 100%);
+            color: white;
+            padding: 2rem 2rem 1.8rem;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* 主要内容 */
+        .content {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-left: 4px solid #2b4c7c;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            color: #0f2b3d;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.8rem 0 0.2rem;
+            color: #1e3c72;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: #5b6e8c;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-title, .position {
+            font-weight: 600;
+            color: #2c3e66;
+            margin: 0.25rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin-top: 0.3rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #f9fafc;
+            border-radius: 1rem;
+            padding: 1rem 1.2rem;
+            transition: 0.1s ease;
+            border: 1px solid #e6edf4;
+        }
+
+        .award-item, .skill-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: white;
+            border-radius: 2rem;
+            padding: 0.2rem 0.8rem;
+            margin: 0.2rem 0.3rem;
+            font-size: 0.8rem;
+            border: 1px solid #cbdde9;
+        }
+
+        .paper {
+            background: #eef3fc;
+            border-left: 3px solid #2b4c7c;
+            padding: 0.8rem 1rem;
+            border-radius: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #6c7a91;
+            border-top: 1px solid #e9edf2;
+            background: #fafcff;
+        }
+
+        @media (max-width: 700px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .header {
+                padding: 1.5rem;
+            }
+            .name {
+                font-size: 1.8rem;
+            }
+            .content {
+                padding: 1.2rem;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            background: #2b4c7c;
+            border: none;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        button:hover {
+            background: #1e3c62;
+        }
+        .hidden {
+            display: none;
+        }
+        .vibe-btn {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="name">张智</div>
+        <div class="contact">
+            <span>📞 13185972690</span>
+            <span>✉️ 1819026497@qq.com</span>
+            <span>🎂 21岁</span>
+        </div>
+        <div class="vibe-btn">
+            <button id="vibeBtn">✨ Vibe Mode</button>
+            <span id="vibeMsg" class="hidden" style="margin-left: 12px; font-size:0.8rem;">🎧 感受编程氛围~</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- 教育 -->
+        <section>
+            <h2>📖 教育经历</h2>
+            <div><strong>沈阳工学院</strong> · 市场营销本科（2023.09 – 2027.06）</div>
+            <div style="color:#4b5b7a; font-size:0.9rem;">主修课程：市场营销学、消费者行为学、品牌管理、营销策划、新媒体运营、大数据营销、Python数据分析、电子商务、广告学、互联网商业模式</div>
+        </section>
+
+        <!-- 实习经历 -->
+        <section>
+            <h2>💼 实习经历</h2>
+
+            <div class="card" style="margin-bottom:1rem;">
+                <h3>沈阳天胜合茂留学咨询有限公司 · 营销管理专员</h3>
+                <div class="date">2023.09 – 至今</div>
+                <ul>
+                    <li>新媒体运营：负责小红书/公众号/抖音内容策划，累计发布30+篇，总曝光2w+，粉丝增长300+。</li>
+                    <li>内容创作：独立完成商用视频剪辑20+条（剪映），单条最高播放1200次；论文《新媒体矩阵赋能留学教育数字化营销效果研究》被《科技新时代》录用。</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-bottom:1rem;">
+                <h3>宁波市北仑区乐读学苑 · 助教 / 销售宣传/班主任</h3>
+                <div class="date">2023 – 2025</div>
+                <ul>
+                    <li>资料整理：整理教学资料200+份，效率提升30%。</li>
+                    <li>用户运营：服务学员及家长150+人次，续班率提升15%，获“优秀班主任”。</li>
+                    <li>销售转化：参与寒暑假招生活动，触达500+客户，协助完成招生目标120%。</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>TGBUS苹果手机专卖店 · 导购员</h3>
+                <div class="date">2023.01 – 2023.03</div>
+                <ul>
+                    <li>日均接待30+客户，个人销售额门店前3，满意度98%。</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top:0.8rem;">
+                <h3>约局儿东北烤串之道烧烤店 · 门店服务员</h3>
+                <div class="date">2025.03 – 2025.04</div>
+                <ul><li>高峰时段日均客流100+，0投诉完成服务，获店长好评。</li></ul>
+            </div>
+        </section>
+
+        <!-- 项目/竞赛 双栏布局 -->
+        <section>
+            <h2>🏆 项目 / 竞赛</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📄 第一作者学术论文</h3>
+                    <p style="font-size:0.9rem;">《新媒体矩阵赋能留学教育数字化营销效果研究》<br>录用至《科技新时代》2025年第21期</p>
+                </div>
+                <div class="card">
+                    <h3>📊 “正大杯”市调大赛</h3>
+                    <p>省级一等奖 · 国家级三等奖<br>队长，完成“康平花生”调研，问卷500+，Python/SPSS分析。</p>
+                </div>
+                <div class="card">
+                    <h3>💡 电子商务三创赛</h3>
+                    <p>省级一等奖 · 队长，策划“校园区块式谈判推广”项目，撰写3万字策划案。</p>
+                </div>
+                <div class="card">
+                    <h3>🎙️ 辩论赛荣誉</h3>
+                    <p>第二届“创新杯”一等奖/最佳辩手<br>第八届“百辩青春”二等奖/最佳辩手</p>
+                </div>
+                <div class="card">
+                    <h3>🌾 智慧农业创新创业大赛</h3>
+                    <p>省优秀奖 · 挑战杯校级二等奖</p>
+                </div>
+                <div class="card">
+                    <h3>📝 多项目负责人</h3>
+                    <p>8项赛事/10+小组任务任队长，累计撰写10余万字策划，公开答辩12场。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 校园经历 -->
+        <section>
+            <h2>🏫 校园经历</h2>
+            <div class="card">
+                <h3>校督导信息中心 · 中心干事</h3>
+                <ul>
+                    <li>运营“沈工小督同学”官号，推文40+篇，最高阅读500+，粉丝增长200+。</li>
+                    <li>策划主持全校性活动5场，单场最高300人参与，满意度超95%。</li>
+                    <li>每月汇总教学反馈50+条，推动3项管理建议落地。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 技能&证书 + 个人评价 双栏 -->
+        <section>
+            <h2>⚙️ 技能 & 证书</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📜 证书</h3>
+                    <p>英语四级（CET-4） · 驾驶证C1</p>
+                    <h3 style="margin-top: 0.8rem;">📊 数据分析</h3>
+                    <p>Python（数据清洗/分析） · Excel（透视表/函数，千级数据）</p>
+                    <h3>🎬 内容创作</h3>
+                    <p>剪映（50+条/商用10+） · mini3航拍 · 公众号排版</p>
+                    <h3>🤖 AI工具</h3>
+                    <p>Openclaw / Gemini / Kimi / DeepSeek / 即梦 等</p>
+                </div>
+                <div class="card">
+                    <h3>💬 个人评价</h3>
+                    <ul>
+                        <li><strong>逻辑表达</strong>：8场学科竞赛主汇报人，多次“最佳辩手”，擅长条理化呈现。</li>
+                        <li><strong>创新思维</strong>：带队从0到1落地3个项目，获省级奖项。</li>
+                        <li><strong>文字撰写</strong>：累计撰写报告/策划/论文超15万字，第一作者发表学术论文。</li>
+                        <li><strong>统筹执行</strong>：组织校级活动5场，协调5-10人团队高效落地。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 论文&奖项补充 -->
+        <section>
+            <div class="paper">
+                🧠 第一作者论文：《新媒体矩阵赋能留学教育数字化营销效果研究》<br>
+                📅 第十五届“正大杯”国家级三等奖 | 三创赛省级一等奖 | 辩论赛一等奖/最佳辩手<br>
+                🎯 累计撰写项目策划10余万字，公开答辩12场，多次带队获奖。
+            </div>
+        </section>
+    </div>
+    <footer>
+        ✨ 个人简历网站 | 用 “Vibe Coding” 构建 · 数据基于真实经历
+    </footer>
+</div>
+
+<script>
+    const btn = document.getElementById('vibeBtn');
+    const msg = document.getElementById('vibeMsg');
+    btn.addEventListener('click', () => {
+        msg.classList.remove('hidden');
+        setTimeout(() => {
+            msg.classList.add('hidden');
+        }, 2500);
+        // 额外小彩蛋：控制台输出
+        console.log("%c✨ Vibe Coding Activated — 你的简历已上线！", "color: #2b4c7c; font-size: 14px;");
+    });
+</script>
+</body>
+</html>
